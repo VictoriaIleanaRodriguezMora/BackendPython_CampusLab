@@ -30,14 +30,30 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+ 
+DJANGO_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
 ]
+ 
+EXTERNAL_APPS = [
+    "ninja",
+]
+ 
+
+# Una app por cada cosa distinta que resuelve el sistema. El orden de la lista
+# no cambia el funcionamiento, pero conviene escribirlas de la que no depende de
+# nadie a la que depende de todas: es el mismo orden en el que se construyen.
+LOCAL_APPS = [
+    "apps.accounts.apps.AccountsConfig",
+]
+
+INSTALLED_APPS = DJANGO_APPS + EXTERNAL_APPS + LOCAL_APPS
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
