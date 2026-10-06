@@ -2,6 +2,7 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.db import models
 
 # De este archivo me cuesta todo...
+# REPASAR Y LEER MAS DETENIDAMENTE
 
 # ? Qué es un queryset
 class UserQuerySet(models.QuerySet):
